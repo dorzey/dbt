@@ -2938,10 +2938,9 @@ class TestDocsGenerate(DBTIntegrationTest):
 
         return [
             {
-                'error': None,
+                'status': 'success',
+                'message': None,
                 'execution_time': AnyFloat(),
-                'fail': None,
-                'warn': None,
                 'node': {
                     'alias': 'model',
                     'build_path': Normalized(
@@ -3025,14 +3024,11 @@ class TestDocsGenerate(DBTIntegrationTest):
                 },
                 'thread_id': ANY,
                 'timing': [ANY, ANY],
-                'skip': False,
-                'status': None,
             },
             {
-                'error': None,
+                'status': 'success',
+                'message': None,
                 'execution_time': AnyFloat(),
-                'fail': None,
-                'warn': None,
                 'node': {
                     'alias': 'second_model',
                     'build_path': Normalized(
@@ -3117,14 +3113,11 @@ class TestDocsGenerate(DBTIntegrationTest):
                 },
                 'thread_id': ANY,
                 'timing': [ANY, ANY],
-                'skip': False,
-                'status': None,
             },
             {
-                'error': None,
+                'status': 'success',
+                'message': None,
                 'execution_time': AnyFloat(),
-                'fail': None,
-                'warn': None,
                 'node': {
                     'alias': 'seed',
                     'build_path': None,
@@ -3203,14 +3196,11 @@ class TestDocsGenerate(DBTIntegrationTest):
                 },
                 'thread_id': ANY,
                 'timing': [ANY, ANY],
-                'skip': False,
-                'status': None,
             },
             {
-                'error': None,
-                'warn': None,
+                'status': 'success',
+                'message': None,
                 'execution_time': AnyFloat(),
-                'fail': None,
                 'node': {
                     'alias': 'snapshot_seed',
                     'build_path': None,
@@ -3258,14 +3248,11 @@ class TestDocsGenerate(DBTIntegrationTest):
                 },
                 'thread_id': ANY,
                 'timing': [ANY, ANY],
-                'skip': False,
-                'status': None,
             },
             {
-                'error': None,
+                'status': 'success',
+                'message': None,
                 'execution_time': AnyFloat(),
-                'fail': None,
-                'warn': None,
                 'node': {
                     'alias': 'not_null_model_id',
                     'build_path': Normalized('target/compiled/test/models/schema.yml/schema_test/not_null_model_id.sql'),
@@ -3313,14 +3300,11 @@ class TestDocsGenerate(DBTIntegrationTest):
                 },
                 'thread_id': ANY,
                 'timing': [ANY, ANY],
-                'skip': False,
-                'status': None,
             },
             {
-                'error': None,
+                'status': 'success',
+                'message': None,
                 'execution_time': AnyFloat(),
-                'fail': None,
-                'warn': None,
                 'node': {
                     'alias': 'test_nothing_model_',
                     'build_path': Normalized('target/compiled/test/models/schema.yml/schema_test/test_nothing_model_.sql'),
@@ -3367,14 +3351,11 @@ class TestDocsGenerate(DBTIntegrationTest):
                 },
                 'thread_id': ANY,
                 'timing': [ANY, ANY],
-                'skip': False,
-                'status': None
             },
             {
-                'error': None,
+                'status': 'success',
+                'message': None,
                 'execution_time': AnyFloat(),
-                'fail': None,
-                'warn': None,
                 'node': {
                     'alias': 'unique_model_id',
                     'build_path': Normalized('target/compiled/test/models/schema.yml/schema_test/unique_model_id.sql'),
@@ -3422,8 +3403,6 @@ class TestDocsGenerate(DBTIntegrationTest):
                 },
                 'thread_id': ANY,
                 'timing': [ANY, ANY],
-                'skip': False,
-                'status': None,
             },
         ]
 
@@ -3456,10 +3435,9 @@ class TestDocsGenerate(DBTIntegrationTest):
 
         return [
             {
-                'error': None,
+                'status': 'success',
+                'message': None,
                 'execution_time': AnyFloat(),
-                'fail': None,
-                'warn': None,
                 'node': {
                     'alias': 'ephemeral_summary',
                     'build_path': Normalized(
@@ -3528,14 +3506,11 @@ class TestDocsGenerate(DBTIntegrationTest):
                 },
                 'thread_id': ANY,
                 'timing': [ANY, ANY],
-                'skip': False,
-                'status': None,
             },
             {
-                'error': None,
+                'status': 'success',
+                'message': None,
                 'execution_time': AnyFloat(),
-                'fail': None,
-                'warn': None,
                 'node': {
                     'alias': 'view_summary',
                     'build_path': Normalized(
@@ -3603,14 +3578,11 @@ class TestDocsGenerate(DBTIntegrationTest):
                 },
                 'thread_id': ANY,
                 'timing': [ANY, ANY],
-                'skip': False,
-                'status': None,
             },
             {
-                'error': None,
+                'status': 'success',
+                'message': None,
                 'execution_time': AnyFloat(),
-                'fail': None,
-                'warn': None,
                 'node': {
                     'alias': 'seed',
                     'build_path': None,
@@ -3689,14 +3661,11 @@ class TestDocsGenerate(DBTIntegrationTest):
                 },
                 'thread_id': ANY,
                 'timing': [ANY, ANY],
-                'skip': False,
-                'status': None,
             },
             {
-                'error': None,
-                'warn': None,
+                'status': 'success',
+                'message': None,
                 'execution_time': AnyFloat(),
-                'fail': None,
                 'node': {
                     'alias': 'snapshot_seed',
                     'build_path': None,
@@ -3741,14 +3710,11 @@ class TestDocsGenerate(DBTIntegrationTest):
                 },
                 'thread_id': ANY,
                 'timing': [ANY, ANY],
-                'skip': False,
-                'status': None,
             },
         ]
 
     def verify_run_results(self, expected_run_results):
         run_results = _read_json('./target/run_results.json')
-
         assert 'metadata' in run_results
         self.verify_metadata(
             run_results['metadata'], 'https://schemas.getdbt.com/dbt/run-results/v1.json')
